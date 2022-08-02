@@ -165,7 +165,7 @@ e = Edge('a','b')
 paths, gates, pathGateMap, newPathGateMap, edgeInputMap=getPathsInstr(edges)
 
 t1=time.perf_counter()
-print("path removing result using naive incremental algorithm: ", remove_edge(e, gates))
+print("paths removed using naive incremental algorithm: ", remove_edge(e, gates))
 t2=time.perf_counter()
 print("naive incremental use: "+str((t2-t1)*1000)+"ms")
 print()
@@ -211,7 +211,7 @@ t2=time.perf_counter()
 affectedstr=[tupleToStr(gates[k].name) for k in affected if not isinstance(gates[k], AndGate)]
 # affectedstr=list(set(affectedstr))
 affectedstr=sorted(set(affectedstr), key=lambda x: affectedstr.index(x))
-print("path removing result using adanced incremental algorithm: ", affectedstr)
+print("paths removed using adanced incremental algorithm: ", affectedstr)
 print("advanced incremental use: "+str((t2-t1)*1000)+"ms")
 print()
 
